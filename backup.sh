@@ -3,16 +3,15 @@ export PATH=/bin:/usr/bin:/usr/local/bin
 ################################################################
 ##
 ##   Sistema de copia de seguridad completa
-##   Escrito por: Angel Luis Marino
+##   Escrito por: Angel Luis Marino <marino@angelluis.es>
 ##   Creación: 11-11-2019
-##   Actualización: 16-07-2021
+##   Actualización: 04-04-2022
 ##
 ################################################################
 
-## Antes de empezar hay que configurar en el servidor la keygen y dejarlo que se pueda conectar de forma automatica al servidor de backup.
+## Antes de empezar hay que configurar en el servidor la keygen y dejarlo que se pueda conectar de forma automática al servidor de backup.
 # ssh-keygen -t rsa -b 4096
 # ssh-copy-id -i ~/.ssh/id_rsa user@miservidor.com
-# 82Gak4u$vL324k~p
 
 # Si es un Plesk
 # backup plesk all   >> Realizará un backup de todos los ficheros y bases de datos
@@ -48,8 +47,8 @@ fi;
 ### Parametros mysql
 MYSQL_HOST='localhost'
 #MYSQL_PORT='3306'
-MYSQL_USER='backup'
-MYSQL_PASSWORD='B@ck_264350.**'
+MYSQL_USER='uxxxxxxx'
+MYSQL_PASSWORD='*******'
 
 # Backup en bases de datos docker
 docker_contenedor="containername"
@@ -99,13 +98,13 @@ registro() {
 # Verificamos que hay parametros de entrada.
 if [ $# == '2' ]; then
   if [ "$1" != 'plesk' ]; then
-    registro "Parametros incorrectos"
+    registro "Parámetros incorrectos"
     continua=0
   elif [ "$1" != 'vesta' ]; then
-    registro "Parametros incorrectos"
+    registro "Parámetros incorrectos"
     continua=0
   elif [ "$1" != 'custom' ]; then
-    registro "Parametros incorrectos"
+    registro "Parámetros incorrectos"
     continua=0
   else
     registro "Iniciando backup del ${datetime_dir} por ${ads}"
