@@ -1,11 +1,10 @@
-# backup
-Copias de seguridad
+# Scrip de copias de seguridad en Linux
 ## Antes de empezar hay que configurar en el servidor la keygen y dejarlo que se pueda conectar de forma automática al servidor de backup.
-# ssh-keygen -t rsa -b 4096
-# ssh-copy-id -i ~/.ssh/id_rsa user@miservidor.com
+ssh-keygen -t rsa -b 4096
+ssh-copy-id -i ~/.ssh/id_rsa user@miservidor.com
 
-# Si es un Plesk
-# backup plesk all   >> Realizará un backup de todos los ficheros y bases de datos
+### Si es un Plesk
+ backup plesk all   >> Realizará un backup de todos los ficheros y bases de datos
 # backup plesk db    >> Realizará un backup de todas las bases de datos
 # backup plesk files >> Realizará un backup de todos los ficheros
 
